@@ -2,7 +2,7 @@ package com.example.calculator;
 
 import java.util.Scanner;
 
-public class Calculator {
+public class App {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
@@ -50,6 +50,5 @@ public class Calculator {
             System.out.println("더 계산하시겟습니까?(exit 입력시 종료)");
             messege = sc.next();
         }while (!messege.equals("exit"));
-
     }
 }
