@@ -19,12 +19,15 @@ public class App {
             char option = sc.next().charAt(0);
             //Cal클래스의 연산결과 받기
             double result = cal1.calculate(inputfir,inputsec,option);
-            //계산결과가 0이아닌 유효결과일경우에만 출력
-           if (result != 0);{
+            // 결과가 NaN이면 두 번째 숫자를 다시 입력받기
+            if (Double.isNaN(result)) {
+                continue; // 반복문 처음으로 돌아감
+            }
+
                result=Math.round(result*100.0)/100.0; //100을곱하고 반올림 후 100으로 나눠서 소수점 2자리까지 반올림
                 System.out.println("결과"+result);
                 inputfir=result; //반복문으로 계산을 더할시 결과값을 inputfir로만든후 계산
-            }
+
             //계산을 더할지 물어보기
             System.out.println("더 계산하시겟습니까?(exit 입력시 종료)");
             messege = sc.next();

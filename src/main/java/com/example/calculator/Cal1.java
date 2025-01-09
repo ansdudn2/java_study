@@ -32,7 +32,7 @@ public class Cal1 {
                     result = num1/num2;
                 }else {
                     System.out.println("0으로 나눌수없습니다.");
-                    return 0;
+                    return Double.NaN; // 에러 상황 시 NaN 반환
                 }
                 break;
             case  '%' :
@@ -40,12 +40,12 @@ public class Cal1 {
                     result = num1%num2;
                 }else {
                     System.out.println("0으로 나눌수없습니다.");
-                    return 0;
+                    return Double.NaN; // 에서 상황 시 NaN 반환
                 }
                 break;
             default:
                 System.out.println("사칙연산으로 입력해주세요");
-                return 0;
+                return Double.NaN; // 잘못된 연산자 입력 시 NaN 반환
         }
         calculation.add(num1+""+oper+""+num2+"="+result);
         return result;
