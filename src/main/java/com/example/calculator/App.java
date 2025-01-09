@@ -21,6 +21,7 @@ public class App {
             double result = cal1.calculate(inputfir,inputsec,option);
             //계산결과가 0이아닌 유효결과일경우에만 출력
            if (result != 0);{
+               result=Math.round(result*100.0)/100.0; //100을곱하고 반올림 후 100으로 나눠서 소수점 2자리까지 반올림
                 System.out.println("결과"+result);
                 inputfir=result; //반복문으로 계산을 더할시 결과값을 inputfir로만든후 계산
             }
