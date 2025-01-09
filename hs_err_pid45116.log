@@ -1,0 +1,236 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 536870912 bytes. Error detail: G1 virtual space
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   This process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Zero Based Compressed Oops mode in which the Java heap is
+#     placed in the first 32GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 32GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_windows.cpp:3614), pid=45116, tid=46152
+#
+# JRE version:  (17.0.13+11) (build )
+# Java VM: OpenJDK 64-Bit Server VM (17.0.13+11-LTS, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -Dfile.encoding=UTF-8 -Duser.country=KR -Duser.language=ko -Duser.variant com.example.calculator.Calculator
+
+Host: AMD Ryzen 9 5950X 16-Core Processor            , 32 cores, 31G,  Windows 10 , 64 bit Build 19041 (10.0.19041.5198)
+Time: Fri Jan  3 17:07:06 2025  Windows 10 , 64 bit Build 19041 (10.0.19041.5198) elapsed time: 0.011055 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000001f74d73ba60):  JavaThread "Unknown thread" [_thread_in_vm, id=46152, stack(0x000000032f700000,0x000000032f800000)]
+
+Stack: [0x000000032f700000,0x000000032f800000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x680c19]
+V  [jvm.dll+0x83888a]
+V  [jvm.dll+0x83a34e]
+V  [jvm.dll+0x83a9b3]
+V  [jvm.dll+0x2481af]
+V  [jvm.dll+0x67d959]
+V  [jvm.dll+0x67242a]
+V  [jvm.dll+0x30813b]
+V  [jvm.dll+0x30f626]
+V  [jvm.dll+0x35f94e]
+V  [jvm.dll+0x35fb8f]
+V  [jvm.dll+0x2df0ec]
+V  [jvm.dll+0x2e0044]
+V  [jvm.dll+0x80a04b]
+V  [jvm.dll+0x36d6c1]
+V  [jvm.dll+0x7e8975]
+V  [jvm.dll+0x3f109f]
+V  [jvm.dll+0x3f2c11]
+C  [jli.dll+0x52ab]
+C  [ucrtbase.dll+0x21bb2]
+C  [KERNEL32.DLL+0x17374]
+C  [ntdll.dll+0x4cc91]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00007ffe19d98f58, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+
+Other Threads:
+  0x000001f74d7ed020 GCTaskThread "GC Thread#0" [stack: 0x000000032f800000,0x000000032f900000] [id=46156]
+  0x000001f778660080 ConcurrentGCThread "G1 Main Marker" [stack: 0x000000032f900000,0x000000032fa00000] [id=46160]
+  0x000001f778661150 ConcurrentGCThread "G1 Conc#0" [stack: 0x000000032fa00000,0x000000032fb00000] [id=46164]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffe1954f827]
+
+VM state: not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x000001f74d737c50] Heap_lock - owner thread: 0x000001f74d73ba60
+
+Heap address: 0x0000000601400000, size: 8172 MB, Compressed Oops mode: Zero based, Oop shift amount: 3
+
+CDS archive(s) mapped at: [0x0000000000000000-0x0000000000000000-0x0000000000000000), size 0, SharedBaseAddress: 0x0000000800000000, ArchiveRelocationMode: 1.
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0, Narrow klass range: 0x0
+
+GC Precious Log:
+<Empty>
+
+Heap:
+ garbage-first heap   total 0K, used 0K [0x0000000601400000, 0x0000000800000000)
+  region size 4096K, 0 young (0K), 0 survivors (0K)
+
+[error occurred during error reporting (printing heap information), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffe19939e69]
+
+GC Heap History (0 events):
+No events
+
+Dll operation events (1 events):
+Event: 0.007 Loaded shared library C:\Users\문정호\.jdks\corretto-17.0.13\bin\java.dll
+
+Deoptimization events (0 events):
+No events
+
+Classes loaded (0 events):
+No events
+
+Classes unloaded (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+VM Operations (0 events):
+No events
+
+Memory protections (0 events):
+No events
+
+Nmethod flushes (0 events):
+No events
+
+Events (0 events):
+No events
+
+
+Dynamic libraries:
+0x00007ff7726a0000 - 0x00007ff7726ae000 	C:\Users\문정호\.jdks\corretto-17.0.13\bin\java.exe
+0x00007ffe91ef0000 - 0x00007ffe920e8000 	C:\Windows\SYSTEM32\ntdll.dll
+0x00007ffe91370000 - 0x00007ffe91432000 	C:\Windows\System32\KERNEL32.DLL
+0x00007ffe8f610000 - 0x00007ffe8f90e000 	C:\Windows\System32\KERNELBASE.dll
+0x00007ffe8f910000 - 0x00007ffe8fa10000 	C:\Windows\System32\ucrtbase.dll
+0x00007ffe7bed0000 - 0x00007ffe7bee7000 	C:\Users\문정호\.jdks\corretto-17.0.13\bin\jli.dll
+0x00007ffe7baf0000 - 0x00007ffe7bb0b000 	C:\Users\문정호\.jdks\corretto-17.0.13\bin\VCRUNTIME140.dll
+0x00007ffe8ff10000 - 0x00007ffe900ad000 	C:\Windows\System32\USER32.dll
+0x00007ffe8f5e0000 - 0x00007ffe8f602000 	C:\Windows\System32\win32u.dll
+0x00007ffe90ca0000 - 0x00007ffe90ccb000 	C:\Windows\System32\GDI32.dll
+0x00007ffe7f760000 - 0x00007ffe7f9fa000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.4355_none_60b8b9eb71f62e16\COMCTL32.dll
+0x00007ffe8fab0000 - 0x00007ffe8fbc7000 	C:\Windows\System32\gdi32full.dll
+0x00007ffe91e10000 - 0x00007ffe91eae000 	C:\Windows\System32\msvcrt.dll
+0x00007ffe8fa10000 - 0x00007ffe8faad000 	C:\Windows\System32\msvcp_win.dll
+0x00007ffe90270000 - 0x00007ffe9029f000 	C:\Windows\System32\IMM32.DLL
+0x00007ffe8aff0000 - 0x00007ffe8affc000 	C:\Users\문정호\.jdks\corretto-17.0.13\bin\vcruntime140_1.dll
+0x00007ffe5f320000 - 0x00007ffe5f3ad000 	C:\Users\문정호\.jdks\corretto-17.0.13\bin\msvcp140.dll
+0x00007ffe19260000 - 0x00007ffe19ecc000 	C:\Users\문정호\.jdks\corretto-17.0.13\bin\server\jvm.dll
+0x00007ffe90d70000 - 0x00007ffe90e21000 	C:\Windows\System32\ADVAPI32.dll
+0x00007ffe90cd0000 - 0x00007ffe90d6f000 	C:\Windows\System32\sechost.dll
+0x00007ffe908a0000 - 0x00007ffe909c3000 	C:\Windows\System32\RPCRT4.dll
+0x00007ffe8fbd0000 - 0x00007ffe8fbf7000 	C:\Windows\System32\bcrypt.dll
+0x00007ffe90e30000 - 0x00007ffe90e9b000 	C:\Windows\System32\WS2_32.dll
+0x00007ffe8eae0000 - 0x00007ffe8eb2b000 	C:\Windows\SYSTEM32\POWRPROF.dll
+0x00007ffe80df0000 - 0x00007ffe80e17000 	C:\Windows\SYSTEM32\WINMM.dll
+0x00007ffe86de0000 - 0x00007ffe86dea000 	C:\Windows\SYSTEM32\VERSION.dll
+0x00007ffe8e950000 - 0x00007ffe8e962000 	C:\Windows\SYSTEM32\UMPDC.dll
+0x00007ffe8dd90000 - 0x00007ffe8dda2000 	C:\Windows\SYSTEM32\kernel.appcore.dll
+0x00007ffe709e0000 - 0x00007ffe709ea000 	C:\Users\문정호\.jdks\corretto-17.0.13\bin\jimage.dll
+0x00007ffe8d250000 - 0x00007ffe8d434000 	C:\Windows\SYSTEM32\DBGHELP.DLL
+0x00007ffe830f0000 - 0x00007ffe83124000 	C:\Windows\SYSTEM32\dbgcore.DLL
+0x00007ffe8fe80000 - 0x00007ffe8ff02000 	C:\Windows\System32\bcryptPrimitives.dll
+0x00007ffe70710000 - 0x00007ffe70735000 	C:\Users\문정호\.jdks\corretto-17.0.13\bin\java.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Users\문정호\.jdks\corretto-17.0.13\bin;C:\Windows\SYSTEM32;C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.4355_none_60b8b9eb71f62e16;C:\Users\문정호\.jdks\corretto-17.0.13\bin\;C:\Users\문정호\.jdks\corretto-17.0.13\b
+
+VM Arguments:
+jvm_args: -Dfile.encoding=UTF-8 -Duser.country=KR -Duser.language=ko -Duser.variant 
+java_command: com.example.calculator.Calculator
+java_class_path (initial): C:\Users\문정호\IdeaProjects\untitled1\build\classes\java\main;C:\Users\문정호\IdeaProjects\untitled1\build\resources\main
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 15                                        {product} {ergonomic}
+     uint ConcGCThreads                            = 6                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 23                                        {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 4194304                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 536870912                                 {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 8568963072                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 4194304                                   {product} {ergonomic}
+   size_t MinHeapSize                              = 8388608                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 8192380                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 121732930                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 121732930                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+   size_t SoftMaxHeapSize                          = 8568963072                             {manageable} {ergonomic}
+     bool UseCompressedClassPointers               = true                           {product lp64_product} {ergonomic}
+     bool UseCompressedOops                        = true                           {product lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags
+ #1: stderr all=off uptime,level,tags
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\java\jdk-21.0.5.11-hotspot\
+PATH=C:\Program Files\java\jdk-21.0.5.11-hotspot\bin;C:\Program Files\java\jdk-21.0.5.11-hotspot\bin;C:\Python313\Scripts\;C:\Python313\;C:\Program Files (x86)\Common Files\Oracle\Java\java8path;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\VMware\VMware Player\bin\;C:\Program Files (x86)\Razer Chroma SDK\bin;C:\Program Files\Razer Chroma SDK\bin;C:\Program Files (x86)\Razer\ChromaBroadcast\bin;C:\Program Files\Razer\ChromaBroadcast\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files\Bandizip\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Windows\system32\config\systemprofile\AppData\Local\Microsoft\WindowsApps;C:\Users\문정호\AppData\Local\Microsoft\WindowsApps;C:;Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR;C:\Program Files\Git\cmd;C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR;C:\Program Files\nodejs\;C:\ProgramData\chocolatey\bin;C:\Users\문정호\AppData\Local\Microsoft\WindowsApps;;C:\Users\문정호\AppData\Local\afreeca;C:\Users\문정호\AppData\Local\SOOP;C:\Users\문정호\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\문정호\AppData\Roaming\npm
+USERNAME=문정호
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=AMD64 Family 25 Model 33 Stepping 0, AuthenticAMD
+TMP=C:\Users\문정호\AppData\Local\Temp
+TEMP=C:\Users\문정호\AppData\Local\Temp
+
+
+
+Periodic native trim disabled
+
+
+---------------  S Y S T E M  ---------------
+
+OS:
+ Windows 10 , 64 bit Build 19041 (10.0.19041.5198)
+OS uptime: 0 days 7:39 hours
+Hyper-V role detected
+
+CPU: total 32 (initial active 32) (32 cores per cpu, 2 threads per core) family 25 model 33 stepping 0 microcode 0x0, cx8, cmov, fxsr, ht, mmx, 3dnowpref, sse, sse2, sse3, ssse3, sse4a, sse4.1, sse4.2, popcnt, lzcnt, tsc, tscinvbit, avx, avx2, aes, erms, clmul, bmi1, bmi2, adx, sha, fma, vzeroupper, clflush, clflushopt, hv
+Processor Information for all 32 processors :
+  Max Mhz: 3401, Current Mhz: 3401, Mhz Limit: 3401
+
+Memory: 4k page, system-wide physical 32673M (14632M free)
+TotalPageFile size 37653M (AvailPageFile size 123M)
+current process WorkingSet (physical memory assigned to process): 11M, peak: 11M
+current process commit charge ("private bytes"): 92M, peak: 604M
+
+vm_info: OpenJDK 64-Bit Server VM (17.0.13+11-LTS) for windows-amd64 JRE (17.0.13+11-LTS), built on Oct 10 2024 19:51:30 by "Administrator" with MS VC++ 16.10 / 16.11 (VS2019)
+
+END.
