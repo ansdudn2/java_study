@@ -14,8 +14,8 @@ public class Cal1 {
         calculation = new ArrayList<>();
     }
     //사칙연산을 수행한 후, 결과값을 반환하는 메서드 구현
-    public int calculate(int num1,int num2, char oper){
-        int result;
+    public double calculate(double num1,double num2, char oper){
+        double result;
 
         switch (oper){
             case '+':
@@ -53,9 +53,5 @@ public class Cal1 {
     //연산 기록 반환 메서드
     public List<String> getCalculation(){
         return calculation;
-    }
-    public static void main(String[] args) {
-        Cal1 cal1 = new Cal1();
-        System.out.println("결과="+cal1.calculate(5,7,'+'));
     }
 }
