@@ -54,8 +54,4 @@ public class Cal1 {
     public List<String> getCalculation(){
         return calculation;
     }
-    public static void main(String[] args) {
-        Cal1 cal1 = new Cal1();
-        System.out.println("결과="+cal1.calculate(5,7,'+'));
-    }
 }
