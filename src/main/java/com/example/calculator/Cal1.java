@@ -57,4 +57,12 @@ public class Cal1 {
     public void setCalcapsule(List<String> calcapsule) {
         this.calcapsule = calcapsule;
     }
+    //저장된 연산 결과들 중 가장 먼저 저장된 데이터를 삭제하는 기능을 가진 메서드를 구현
+    public void removeResult(){
+        if (!calcapsule.isEmpty()){
+            System.out.println("삭제된 기록="+calcapsule.remove(0));
+        }else{
+            System.out.println("삭제할 기록이 없습니다");
+        }
+    }
 }
