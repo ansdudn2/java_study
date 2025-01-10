@@ -6,39 +6,35 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Cal1 {
-    // 연산 결과를 저장하는 컬렉션 타입 필드 선언 및 생성
-    private List<String> calculation;
+    // 연산 결과를 저장하는 컬렉션 타입 필드를 외부에서 직접 접근 하지 못하도록 수정
+    private List<String> calcapsule = new ArrayList<>();
 
-    public Cal1() {
-        //초기화
-        calculation = new ArrayList<>();
-    }
     //사칙연산을 수행한 후, 결과값을 반환하는 메서드 구현
-    public double calculate(double num1,double num2, char oper){
+    public double calculate(double num1, double num2, char oper) {
         double result;
 
-        switch (oper){
+        switch (oper) {
             case '+':
-                result = num1+num2;
+                result = num1 + num2;
                 break;
-            case '-' :
-                result = num1-num2;
+            case '-':
+                result = num1 - num2;
                 break;
-            case '*' :
-                result = num1*num2;
+            case '*':
+                result = num1 * num2;
                 break;
-            case '/' :
-                if (num2!=0){
-                    result = num1/num2;
-                }else {
+            case '/':
+                if (num2 != 0) {
+                    result = num1 / num2;
+                } else {
                     System.out.println("0으로 나눌수없습니다.");
                     return Double.NaN; // 에러 상황 시 NaN 반환
                 }
                 break;
-            case  '%' :
-                if (num2!=0){
-                    result = num1%num2;
-                }else {
+            case '%':
+                if (num2 != 0) {
+                    result = num1 % num2;
+                } else {
                     System.out.println("0으로 나눌수없습니다.");
                     return Double.NaN; // 에서 상황 시 NaN 반환
                 }
@@ -47,11 +43,18 @@ public class Cal1 {
                 System.out.println("사칙연산으로 입력해주세요");
                 return Double.NaN; // 잘못된 연산자 입력 시 NaN 반환
         }
-        calculation.add(num1+""+oper+""+num2+"="+result);
+        //캡슐화된 결과기록저장
+        calcapsule.add(num1 + "" + oper + "" + num2 + "=" + result);
         return result;
     }
-    //연산 기록 반환 메서드
-    public List<String> getCalculation(){
-        return calculation;
+
+    // Getter 메서드
+    public List<String> getCalcapsule() {
+        return calcapsule;
+    }
+
+    // Setter 메서드 (수정)
+    public void setCalcapsule(List<String> calcapsule) {
+        this.calcapsule = calcapsule;
     }
 }

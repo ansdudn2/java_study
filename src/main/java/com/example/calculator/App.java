@@ -34,7 +34,7 @@ public class App {
         }while (!messege.equals("exit"));//messege가 exit가아닐경우 반복
         //계산 기록 출력
         System.out.println("연산 기록:");
-        for (String record : cal1.getCalculation()) {
+        for (String record : cal1.getCalcapsule()) {
             System.out.println(record);
         }
     }
